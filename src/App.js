@@ -1,13 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
-import Body from './pages/Body';
+import logo from "./logo.svg";
+import "./App.css";
+import Body from "./pages/Body";
+import { Provider } from "react-redux";
+import appStore from "./store/appStore";
 
 function App() {
   return (
-    <div className="text-blue-500 text-lg">
-<Body/>
-    
-    </div>
+    <Provider store={appStore}>
+      <Body />
+    </Provider>
   );
 }
 

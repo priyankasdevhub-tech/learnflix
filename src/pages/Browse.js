@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import Header from "./Header";
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import MainContainer from "./MainContainer";
 
 const Browse = () => {
-  return (
-    <div >Browse</div>
-  )
-}
+  // 👇 get user from redux store
+  useNowPlayingMovies();
 
-export default Browse
+  return (
+    <div className="flex w-screen justify-between  flex-col ">
+      <Header />
+
+      <MainContainer />
+
+      {/* 
+      -BannerView
+        vedioBgView
+        vedioTitle
+
+        -mainCintainer 
+          -moviList * n
+          -cards * n
+*/}
+    </div>
+  );
+};
+
+export default Browse;

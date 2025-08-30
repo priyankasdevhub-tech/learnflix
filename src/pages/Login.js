@@ -5,6 +5,7 @@ import { validateEmail, validatePassword } from "../utils/validation";
 import { validateFirstName } from "../utils/validation";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 import { auth } from "../utils/firebase";
 
@@ -18,12 +19,12 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState("");
   const [firstNameError, setFirstNameError] = useState("");
   const [firebaseErrMsg, setFirebaseErrMsg] = useState("");
+  const navigate = useNavigate();
 
   const runValidation = () => {
     const nameErr = !isSignInForm ? validateFirstName(firstName) : "";
     const mailErr = validateEmail(email);
     const pwdErr = validatePassword(password);
-
     setEmailError(mailErr);
     setFirstNameError(nameErr);
     setPasswordError(pwdErr);
@@ -45,6 +46,7 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log("✅ Signed in user:", user);
+          navigate("./browse");
         })
         .catch((error) => {
           console.error("❌ Sign in error:", error.code, error.message);
@@ -61,6 +63,7 @@ const Login = () => {
           // Signed up
           const user = userCredential.user;
           console.log("user Sihned up sucessfully");
+          navigate("./browse");
 
           // ...
         })
