@@ -7,6 +7,8 @@ const Header = () => {
   const user = useSelector((state) => state.auth.user);
   const auth = getAuth();
   const navigate = useNavigate();
+
+
   const handleSignOut = () => {
     signOut(auth)
       .then((res) => {
@@ -21,7 +23,7 @@ const Header = () => {
       });
   };
   return (
-    <header className="top-0 left-0 w-full z-10 bg-gradient-to-b from-black/70 to-transparent">
+    <header className="top-0 left-0 w-full z-10 bg-gradient-to-b from-black/70 to-transparent absolute">
       <div className="px-8 sm:px-12 py-4 flex  justify-between">
         <img
           className="w-32 sm:w-40"
