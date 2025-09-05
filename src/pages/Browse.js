@@ -1,17 +1,18 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
 import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import useTrailerVd from "../hooks/useTrailerVd";
 import MainContainer from "./MainContainer";
+
 
 const Browse = () => {
   // 👇 get user from redux store
   useNowPlayingMovies();
-
+  
   return (
-    <div className="flex w-screen justify-between  flex-col ">
+    <div className="flex w-screen justify-between  flex-col absolute ">
       <Header />
-
-      <MainContainer />
+    <MainContainer />
 
       {/* 
       -BannerView

@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { API_OPRIONS } from "../utils/constants";
 import { setMovieList } from "../store/movieSlice";
 
-const useNowPlayingMovies = () => {
-  const dispatch = useDispatch();
+ const useNowPlayingMovies = () => {
+   const dispatch = useDispatch();
   const getMoviesList = async () => {
     try {
       const res = await fetch(
@@ -23,4 +23,5 @@ const useNowPlayingMovies = () => {
     getMoviesList();
   }, []);
 };
-export default useNowPlayingMovies;
+
+export default useNowPlayingMovies

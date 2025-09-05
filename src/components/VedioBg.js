@@ -1,14 +1,41 @@
-import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import {useEffect, useState} from "react";
+import { API_OPRIONS } from "../utils/constants";
+import useTrailerVd  from "../hooks/useTrailerVd";
+import { useSelector } from "react-redux";
 
-export class VedioBg extends Component {
-  static propTypes = {}
+const VedioBg = ({movieId}) => {
 
-  render() {
-    return (
-      <div></div>
-    )
-  }
-}
+  const trailerVideo = useSelector(
+    (store) => store.movies?.movieList?.trailerVideo
+  );
 
-export default VedioBg
+  // const trailerVideos = trailerVideo && trailerVideo.length > 0 ? trailerVideo : null
+
+ 
+  
+  
+  useTrailerVd(movieId)
+
+
+
+
+  return (
+    <div className=" w-screen ">
+    <iframe
+  className="w-screen aspect-video"
+  src={`https://www.youtube.com/embed/${trailerVideo?.key}?autoplay=1&mute=1`}
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerPolicy="strict-origin-when-cross-origin"
+  allowFullScreen
+></iframe>
+
+    </div>
+  );
+  
+};
+
+export default VedioBg;
+
+
