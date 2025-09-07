@@ -16,22 +16,16 @@ const MainContainer = () => {
   
   const mainMovie = movies && movies.length > 0 ? movies[0] : null;
 
-
-
-
-
   if (!mainMovie) {
     return <div>Loading...</div>;
   }
   const {original_title,overview,id}=mainMovie
 
   return (
-    <div>
+    <div className="pt-[30%] bg-black md:pt-0">
       <VedioTitle title={original_title} overView={overview} />
       <VedioBg  movieId={id}  />
-      <div>
-   <SecondaryContainer/>
-      </div>
+    
     </div>
   );
 };

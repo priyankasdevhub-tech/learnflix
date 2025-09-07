@@ -31,14 +31,14 @@ const Header = () => {
           alt="Netflix Logo"
         />
 
-        <div className="flex  justify-center flex-col">
+        <div className="flex items-center ">
           <img
-            className=" object-contain"
+            className=" object-contain px-2 "
             src="https://occ-0-2611-2186.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229"
             alt="logo"
           />
 
-          <p onClick={handleSignOut}>SignOut</p>
+          <p className=" text-white cursor-pointer" onClick={handleSignOut}>SignOut</p>
         </div>
       </div>
     </header>

@@ -20,7 +20,7 @@ const dispatch = useDispatch();
         );
         const trailerData = movieData.length
           ? filterData[0]
-          : movieData.results[1];
+          : movieData.results[0];
     
           dispatch(setTrailerVideo(trailerData))
        ;
